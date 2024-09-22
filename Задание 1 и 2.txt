@@ -1,10 +1,10 @@
 Задание 1
 
 SELECT c.login, 
-COUNT (o."inDelivery") 
+COUNT (o.id) AS "deliveryCount" 
 FROM "Couriers" AS c 
-JOIN "Orders" AS o ON c.id = o."courierId" 
-WHERE o."inDelivery" = TRUE 
+LEFT JOIN "Orders" AS o ON c.id = o."courierId" 
+WHERE o."inDelivery" = true 
 GROUP BY c.login;
 
 Задание 2
